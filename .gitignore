@@ -1,5 +1,7 @@
-/macollection_backend/node_modules
-/macollection_backend/create_tables.sql
-/macollection_backend/insert_into_tables.sql
-/macollection_backend/.env
-/macollection_frontend/node_modules
+/node_modules 
+node_modules
+dist
+.gitignore
+.netlify
+
+git add 
