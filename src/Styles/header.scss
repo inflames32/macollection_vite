@@ -29,3 +29,38 @@ li {
     color: grey;
     list-style: none;
 }
+
+.btn_albums-publics,
+.btn_add-album {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    font-weight: 600;
+}
+.btn_add-album {
+    background-color: #0069ff;
+    color: white;
+}
+.btn_add-album:hover {
+    background-color: rgb(15, 15, 174);
+    color: white;
+    transition: 0.5s;
+}
+.btn_add-album:hover {
+    border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+.btn_albums-publics:hover {
+    background-color: #000000;
+    color: white;
+    transition: 0.5s;
+}

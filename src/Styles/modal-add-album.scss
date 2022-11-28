@@ -1,0 +1,37 @@
+.modal_add_new_album {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+    &__form {
+        width: 300px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        font-size: 32px;
+        > input {
+            width: 600px;
+            height: 30px;
+        }
+    }
+    &__btn_submit {
+        margin: 20px;
+    }
+    &:focus {
+        border: blue;
+    }
+}
+label {
+    width: 600px;
+}
+.cover_div {
+    width: 600px;
+    font-size: 16px;
+    margin: 20px 0;
+}

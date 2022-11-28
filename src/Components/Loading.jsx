@@ -1,7 +1,7 @@
 import "../Styles/loading.scss";
 
 const Loading = () => {
-  return <div class="spinner"></div>;
+  return <div className="spinner"></div>;
 };
 
 export default Loading;

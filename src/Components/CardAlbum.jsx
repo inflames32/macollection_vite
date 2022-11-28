@@ -1,33 +1,26 @@
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "../Styles/card-album.scss";
-const CardAlbum = (album) => {
-  const { id } = useParams();
-  console.log(album.url);
-  /*  useEffect(() => {
-    getAlbumById(id);
-  }, []); */
 
-  /*   const getAlbumById = async (id) => {
-    await axios
-      .get(`http://localhost:5000/${id}`)
-      .then((res) => {
-        setAlbumsList(res.data.albums);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }; */
+const CardAlbum = (album) => {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
-    <div className="card">
+    <article className="card" key={album.id} data-aos="fade-left">
       <img src={album.url} alt="" className="card__img" />
       <div className="card__informations">
         <p>{album.title}</p>
         <p>{album.band}</p>
         <p>{album.year}</p>
-        <p className="card__informations__more">Plus d'infos...</p>
+        <Link to={`/albums/${album.id}`}>
+          <p className="card__informations__more">Plus d'infos...</p>{" "}
+        </Link>
       </div>
-    </div>
+    </article>
   );
 };
 export default CardAlbum;

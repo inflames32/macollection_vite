@@ -14,8 +14,11 @@ const Header = () => {
       <nav className="header__nav">
         <ul className="header__nav__ul">
           <Link to="/albums">
-            <button className="header__link__btn">Albums publics</button>
+            <button className="header__link__btn btn_albums-publics">
+              Albums publics
+            </button>
           </Link>
+
           {/*  <Link to="/user">
             <button className="header__link__btn">Utilisateur</button>
           </Link> */}
