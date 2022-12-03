@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import {
   BrowserRouter,
   RouterProvider,
@@ -6,6 +7,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import AOS from "aos";
 
 import Header from "./Components/Header";
 import Home from "./Components/Home";
@@ -14,11 +16,17 @@ import Album from "./Components/Album";
 import ModalAddNewAlbum from "./Components/ModalAddNewAlbum";
 import Error from "./Components/Error";
 import User from "./Components/User";
-import ModalSignup from "./Components/ModalSignup";
+import Signup from "./Components/Signup";
+import Signin from "./Components/Signin";
 
+import "./Styles/normalize.css";
+import "aos/dist/aos.css";
 import "./Styles/App.scss";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <BrowserRouter>
       <div className="app">
@@ -27,14 +35,12 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="*" element={<Error />} />
-          <Route path="albums" element={<AlbumsList />}>
-            <Route path=":id" element={<Album />} />
-            <Route path="add-new-album" element={<ModalAddNewAlbum />} />
-          </Route>
-
-          <Route path="user" element={<User />}>
-            <Route path="signup" element={<ModalSignup />} />
-          </Route>
+          <Route path="albums" element={<AlbumsList />} />
+          <Route path="/album/add-new-album" element={<ModalAddNewAlbum />} />
+          <Route path="album/:id" element={<Album />} />
+          <Route path="user" element={<User />} />{" "}
+          <Route path="signup" element={<Signup />} />
+          <Route path="signin" element={<Signin />} />
         </Routes>
       </div>
     </BrowserRouter>

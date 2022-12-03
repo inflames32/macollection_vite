@@ -63,10 +63,15 @@ const ModalAddNewAlbum = () => {
 
   return (
     <div className="modal_add_new_album" data-aos="zoom-in">
-      <Link to={"/home"}>
-        <IoIosArrowBack className="back_to_albums-list" />
-      </Link>
-      <h1 className="modal_add_new_album__title">Ajouter un nouvel album ?</h1>
+      <header className="modal_add_new_album__header">
+        <Link to={"/albums"}>
+          <IoIosArrowBack className="back_to_albums-list" />
+        </Link>
+        <h1 className="modal_add_new_album__title">
+          Ajouter un nouvel album ?
+        </h1>
+      </header>
+
       <form action="submit" className="modal_add_new_album__form">
         <label htmlFor="band">Nom du groupe</label>
         <input

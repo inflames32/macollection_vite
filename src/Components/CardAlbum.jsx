@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import AOS from "aos";
-import "aos/dist/aos.css";
-import "../Styles/card-album.scss";
+/* import "aos/dist/aos.css";
+import "../Styles/card.scss";*/
 
 const CardAlbum = (album) => {
   useEffect(() => {
-    AOS.init();
+    /* AOS.init();*/
   });
 
   return (
@@ -16,8 +16,8 @@ const CardAlbum = (album) => {
         <p>{album.title}</p>
         <p>{album.band}</p>
         <p>{album.year}</p>
-        <Link to={`/albums/${album.id}`}>
-          <p className="card__informations__more">Plus d'infos...</p>{" "}
+        <Link to={`/album/${album.id}`}>
+          <p className="card__informations__footer">Plus d'infos...</p>{" "}
         </Link>
       </div>
     </article>

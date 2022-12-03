@@ -24,8 +24,9 @@ const Album = () => {
 
   const getAlbumById = async () => {
     console.log("ici");
+    /*   const localeURL = import.meta.env.LOCALE_RULE; */
     await axios
-      .get(`http://localhost:5000/albums/${id}`)
+      .get(`http://127.0.0.1:5000/albums/${id}`)
       .then((res) => {
         setAlbum(res.data.album);
         setIsLoading(false);
@@ -68,7 +69,9 @@ const Album = () => {
           <div className="album__title"> {album.title}</div>
           <div className="album__band"> {album.band}</div>
           <div className="album__year"> {album.year}</div>
-          <button onClick={handleDeleteAlbum}>Supprimer l'album ?</button>
+          <button className="album__btn_delete" onClick={handleDeleteAlbum}>
+            Supprimer l'album ?
+          </button>
         </div>
       )}
       {/*    <Outlet /> */}

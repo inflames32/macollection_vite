@@ -1,8 +1,8 @@
 .album_container {
-    position: absolute;
+    /* position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 2;
+    z-index: 2; */
     width: 100%;
     min-height: 100%;
     display: flex;
@@ -43,4 +43,23 @@
 .btn_add-album {
     margin: 20px 0;
     box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 65%);
+}
+.album__btn_delete {
+    margin: 20px 0;
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 65%);
+    background-color: #ff0000;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    font-weight: 600;
+    &:hover {
+        background-color: #811212;
+        transition: 0.3s;
+    }
 }

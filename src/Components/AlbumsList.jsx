@@ -17,8 +17,9 @@ const AlbumsList = () => {
   }, []);
   const { id } = useParams();
   const getAlbums = async () => {
+    /* const localeURL = import.meta.env.LOCALE_RULE; */
     await axios
-      .get("http://localhost:5000/albums")
+      .get(`http://127.0.0.1:5000/albums`)
       .then((res) => {
         setAlbumsList(res.data.albums);
         setIsLoading(false);
@@ -30,8 +31,8 @@ const AlbumsList = () => {
   };
 
   return (
-    <div className="album-list">
-      <Link to="/albums/add-new-album">
+    <div className="albums-list">
+      <Link to="/album/add-new-album">
         <button className="btn_add-album">Ajouter un album</button>
       </Link>
       <div className="albums-list__container">
@@ -48,7 +49,7 @@ const AlbumsList = () => {
           />
         ))}
       </div>
-      <Outlet />
+      {/*  <Outlet /> */}
     </div>
   );
 };

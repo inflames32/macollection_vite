@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../Styles/modal-signup.scss";
-const ModalSignup = () => {
+import { Link } from "react-router-dom";
+import "../Styles/signup.scss";
+const Signup = () => {
   const [inputChangeCreateAccount, setInputChangeCreateAccount] = useState({
     username: "",
     email: "",
@@ -22,11 +23,11 @@ const ModalSignup = () => {
   };
 
   return (
-    <div className="modal-signup">
-      <h1 className="modal-signup__title">Créer un nouveau compte ?</h1>
+    <div className="signup">
+      <h1 className="signup__title">Créer un nouveau compte ?</h1>
       <form
         action="submit"
-        className="modal-signup__form"
+        className="signup__form"
         onClick={submitCreateAccount}
       >
         <label htmlFor="username"> Nom d'utilisateur</label>
@@ -35,13 +36,13 @@ const ModalSignup = () => {
           name="username"
           value={inputChangeCreateAccount.username}
           onChange={handleInputs}
-          className="modal-signup__form__username"
+          className="signup__form__username"
         />
         <label htmlFor="email">Email</label>
         <input
           type="email"
           name="email"
-          className="modal-signup__form__email"
+          className="signup__form__email"
           value={inputChangeCreateAccount.email}
           onChange={handleInputs}
         />
@@ -51,7 +52,7 @@ const ModalSignup = () => {
           name="password"
           value={inputChangeCreateAccount.password}
           onChange={handleInputs}
-          className="modal-signup__form__password"
+          className="signup__form__password"
         />
         <label htmlFor="password-validation"> Validation du mot de passe</label>
         <input
@@ -59,18 +60,21 @@ const ModalSignup = () => {
           value={inputChangeCreateAccount.password_validation}
           onChange={handleInputs}
           name="password-validation"
-          className="modal-signup__form__password-validation"
+          className="signup__form__password-validation"
         />
         <button
           type="submit"
-          className="modal-signup__form__btn"
+          className="signup__form__btn"
           onClick={submitCreateAccount}
         >
           Créer le compte
         </button>
+        <div>
+          <Link to="/signin">Vous avez déjà un compte ?</Link>
+        </div>
       </form>
     </div>
   );
 };
 
-export default ModalSignup;
+export default Signup;
