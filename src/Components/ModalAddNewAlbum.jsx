@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import albumArt from "album-art";
 
-import axios from "axios";
-import { Outlet, useParams, redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import "../Styles/modal-add-album.scss";
 import AOS from "aos";
@@ -21,9 +21,23 @@ const ModalAddNewAlbum = () => {
     cover_url: cover_url_from_web,
   });
 
-  const handleCover = (e) => {
+  const handleCover = async (e) => {
     setIsLoading(true);
     e.preventDefault();
+    await axios
+      .get("http://127.0.0.1:5000/albums/getAlbumArt", {
+        title: inputsValue.title,
+        band: inputsValue.band,
+      })
+      .then((res) => {
+        console.log(res);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+        return;
+      });
     albumArt(`${inputsValue.band}`, {
       album: ` ${inputsValue.title}`,
       size: "large",

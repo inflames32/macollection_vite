@@ -9,15 +9,15 @@ import {
 } from "react-router-dom";
 import AOS from "aos";
 
-import Header from "./Components/Header";
-import Home from "./Components/Home";
-import AlbumsList from "./Components/AlbumsList";
-import Album from "./Components/Album";
-import ModalAddNewAlbum from "./Components/ModalAddNewAlbum";
-import Error from "./Components/Error";
-import User from "./Components/User";
-import Signup from "./Components/Signup";
-import Signin from "./Components/Signin";
+import Header from "./Components/Header.jsx";
+import Home from "./Components/Home.jsx";
+import AlbumsList from "./Components/AlbumsList.jsx";
+import Album from "./Components/Album.jsx";
+import ModalAddNewAlbum from "./Components/ModalAddNewAlbum.jsx";
+import Error from "./Components/Error.jsx";
+import User from "./Components/User.jsx";
+import Signup from "./Components/Signup.jsx";
+import Signin from "./Components/Signin.jsx";
 
 import "./Styles/normalize.css";
 import "aos/dist/aos.css";

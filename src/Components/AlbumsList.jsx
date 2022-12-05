@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useParams, Link } from "react-router-dom";
 import axios from "axios";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 import CardAlbum from "./CardAlbum.jsx";
 import Loading from "./Loading.jsx";
